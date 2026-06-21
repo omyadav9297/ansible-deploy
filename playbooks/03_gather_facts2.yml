@@ -1,0 +1,9 @@
+---
+- name: installed nginx and start the Service
+  hosts: lab
+  vars:
+    name: "Om Yadav"
+  tasks:
+    - name: Debug welcome
+      debug: 
+        msg: "Welcome {{name}}, you are running code."
