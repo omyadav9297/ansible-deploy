@@ -1,0 +1,6 @@
+- name: Gather facts lession
+  hosts: all
+  tasks:
+    - name: Debug welcome
+      debug: 
+        msg: "Welcome User"
