@@ -5,4 +5,4 @@
   tasks:
     - name: Debug welcome
       debug: 
-        msg: "Welcome {{name}}, you are running code on {{ansible_distribution}}"
+        msg: "Welcome {{name}}, you are running code on {{ansible_distribution}} on version {{ansible_distribution_version}}"
