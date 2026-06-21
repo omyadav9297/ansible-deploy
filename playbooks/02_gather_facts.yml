@@ -1,6 +1,8 @@
 - name: Gather facts lession
   hosts: all
+  vars:
+    name: "Om Yadav"
   tasks:
     - name: Debug welcome
       debug: 
-        msg: "Welcome User"
+        msg: "Welcome {{name}}, you are running code on {{ansible_distribution}}"
