@@ -1,6 +1,7 @@
 ---
 - name: installed nginx and start the Service
   hosts: lab
+  become: true
   tasks:
   - name: install nginx
     yum:
