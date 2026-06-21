@@ -1,5 +1,6 @@
 - name: Gather facts lession
   hosts: all
+  gather_facts: true
   vars:
     name: "Om Yadav"
   tasks:
