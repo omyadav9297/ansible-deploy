@@ -2,12 +2,17 @@
 - name: Install the apache and start the service 
   hosts: localhost
   tasks:
-  - name: install apache
-    yum:
-    name: apache
-    state: present
-  - name: start the service
-    service:
-    name: apache
-    state: restarted
-    enabled: yes
+   - name: install nginx
+     yum:
+       name: apache
+       state: present
+   - name: start the Service
+     service:
+       name: apache
+       state: restarted
+       enabled: yes
+
+  
+ 
+  
+    
