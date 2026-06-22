@@ -1,0 +1,13 @@
+---
+- name: Install the apache and start the service 
+  hosts: localhost
+  tasks:
+  - name: install apache
+    yum:
+    name: apache
+    state: present
+  - name: start the service
+    service:
+    name: apache
+    state: restarted
+    enabled: yes
