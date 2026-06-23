@@ -11,7 +11,7 @@
   - name: start the service
     service:
       name: httpd
-      state: start
+      state: started
       enabled: yes
     register: result
 
