@@ -2,12 +2,12 @@
 - name: installed a package and prints the results
   hosts: all
   become: yes
-  
+
   tasks:
   - name: install the package
     yum:
       name: httpd
       state: present
-      register: result
+    register: result
 
   - debug: var=result  
