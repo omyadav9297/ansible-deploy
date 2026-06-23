@@ -8,6 +8,10 @@
     yum:
       name: httpd
       state: present
+  - name: start the service
+    service:
+      name: httpd
+      state: start
       enabled: yes
     register: result
 
