@@ -9,5 +9,9 @@
       name: httpd
       state: present
     register: result
+    service:
+      name: httpd
+      state: present
+      enabled: yes
 
   - debug: var=result  
