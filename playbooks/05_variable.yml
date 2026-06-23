@@ -6,6 +6,6 @@
     yum:
       name: httpd
       state: installed
-      register: install_result
+      dnf: install_result
 
   - debug: var=install_result    
