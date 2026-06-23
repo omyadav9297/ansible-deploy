@@ -5,7 +5,7 @@
   - name: install the package
     yum:
       name: httpd
-      state: installed
-      dnf: install_result
+      state: present
+      register: result
 
-  - debug: var=install_result    
+  - debug: var=result  
