@@ -1,0 +1,17 @@
+---
+- name: Fetch resolv.conf from managed hosts
+  hosts: all
+  become: yes
+
+  tasks:
+
+    - name: Get hostname
+      command: hostname
+      register: host_name
+      changed_when: false
+
+    - name: Fetch resolv.conf
+      fetch:
+        src: /etc/resolv.conf
+        dest: "/tmp/resolve-file/{{ host_name.stdout }}-resolv.conf"
+        flat: yes
