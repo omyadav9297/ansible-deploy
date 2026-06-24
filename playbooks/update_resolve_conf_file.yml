@@ -1,0 +1,17 @@
+---
+- name: Add a line to a file if the file does not exist on both server H1 and H2
+  hosts: all
+  become: true
+  tasks:
+    - name: add ansible record to a hosts file
+      lineinfile:
+        path: /etc/hosts
+        line: "192.168.1.10 ansible_host ansible"
+        create: yes
+    
+    - name: add host ip and hostname in hists file
+      lineinfile:
+        path: /etc/resolv.conf
+        line: "{{ ansible_all_ipv4_addresses[0] }} {{ ansible_hostname }}"
+        create: yes
+  
