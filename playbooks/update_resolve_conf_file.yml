@@ -11,7 +11,7 @@
     
     - name: add host ip and hostname in hists file
       lineinfile:
-        path: /etc/resolv.conf
+        path: /etc/hosts
         line: "{{ ansible_all_ipv4_addresses[0] }} {{ ansible_hostname }}"
         create: yes
   
