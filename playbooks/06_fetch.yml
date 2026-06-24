@@ -4,14 +4,14 @@
   become: yes
 
   tasks:
-
-    - name: Get hostname
-      command: hostname
-      register: host_name
-      changed_when: false
-
+    - name: create folder /tmp/resolve-file
+      file:
+        path: /tmp/resolve-file
+        state: directory
+      delegate_to: localhost
+      
     - name: Fetch resolv.conf
       fetch:
         src: /etc/resolv.conf
-        dest: "/tmp/resolve-file/{{ host_name.stdout }}-resolv.conf"
+        dest: "/tmp/resolve-file/{{ ansible_hostname }}-resolv.conf"
         flat: yes
