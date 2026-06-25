@@ -1,0 +1,13 @@
+---
+- name: create a file and change the file permission and group
+  hosts:
+  become: true
+  tasks:
+  - name: Create a file
+    file: path= /tml/testfile
+    state: touch
+  - name: change file permission ,owner and group
+    file: path= /tml/testfile
+    owner: Om
+    group: Om
+    mode: '0777'
