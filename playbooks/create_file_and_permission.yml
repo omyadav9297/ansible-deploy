@@ -3,13 +3,13 @@
   hosts: all
   become: true
   tasks:
-  - name: Create a file
-    file:
-      path: /tmp/test.file
-      state: touch
-  - name: change file permission ,owner and group
-    file:
-      path: /tmp/test.file
-      owner: Om
-      group: Om
-      mode: '0777'
+    - name: Create a file
+      file:
+        path: /tmp/test.file
+        state: touch
+    - name: change file permission ,owner and group
+      file:
+        path: /tmp/test.file
+        owner: Om
+        group: Om
+        mode: '0777'
